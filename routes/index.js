@@ -15,9 +15,10 @@ exports.index = function(req, res){
             }
             else {
                 servers = stdout;
+                ks = server.split("\n");
                 res.render('index', {
-                    title: 'Express',
-                    servers: servers
+                    title: 'Chef-tty',
+                    servers: ks
                 });
             }
         });
