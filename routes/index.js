@@ -15,7 +15,7 @@ exports.index = function(req, res){
             }
             else {
                 servers = stdout;
-                ks = server.split("\n");
+                ks = servers.split("\n");
                 res.render('index', {
                     title: 'Chef-tty',
                     servers: ks
