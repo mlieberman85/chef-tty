@@ -11,7 +11,7 @@ exports.server = function (req, res) {
         router: {
             url: proxyServerandPort
         }
-    };  
+    };
     console.log("proxying to: " + req.params.server);
     proxy.proxyRequest(req, res, options);
 };
