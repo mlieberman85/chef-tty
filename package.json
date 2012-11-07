@@ -9,6 +9,7 @@
     "express": "3.0.1",
     "jade": "*",
     "stylus": "*",
-    "http-proxy": "0.8.4"
+    "http-proxy": "0.8.4",
+    "request" : "*"
   }
 }

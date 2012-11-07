@@ -42,8 +42,6 @@ httpProxy.createServer(function(req, res, proxy) {
   proxy.proxyRequest(req, res, target);
 }).listen(9081);
 
-
-
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
