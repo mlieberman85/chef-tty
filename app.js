@@ -9,7 +9,7 @@ var express = require('express')
     , server = require('./routes/server')
   , http = require('http')
   , path = require('path')
-  , httpProxy = require('http-proxy').httpProxy;
+  , httpProxy = require('http-proxy');
 
 var app = express();
 
@@ -33,6 +33,16 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/server/:server', server.server);
+
+httpProxy.createServer(function(req, res, proxy) {
+  //var target = req.params.server + ":9091";
+  temp = req.url.split('/');
+  console.log(temp);
+  console.log('sendint tty.js request to: ', target);
+  proxy.proxyRequest(req, res, target);
+}).listen(9081);
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
