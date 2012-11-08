@@ -3,18 +3,13 @@
  */
 var request = require('request');
 exports.server = function (req, res) {
-/*    var httpProxy = require('http-proxy');
+    var httpProxy = require('http-proxy');
     var proxy = new httpProxy.RoutingProxy();
-    console.log("Request url: " +  req.url)
+    var proxyServer = req.params.server + "/";
+    console.log("Request url: " +  req.url);
     proxy.proxyRequest(req, res, {
-        host: 'localhost',
-        port: 9081
-    });*/
+        host: proxyServer,
+        port: 9091
+    });
     console.log("Sending request to: " + req.params.server);
-/*    request('http://' + req.params.server + ":9091", function(error, response, body) {
-        console.log(response);
-        if(!error && response.statusCode == 200) {
-            res.send(body);
-        }
-    })*/
 };
