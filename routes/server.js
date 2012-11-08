@@ -11,10 +11,10 @@ exports.server = function (req, res) {
         port: 9081
     });*/
     console.log("Sending request to: " + req.params.server);
-    request('http://' + req.params.server + ":9091", function(error, response, body) {
+/*    request('http://' + req.params.server + ":9091", function(error, response, body) {
         console.log(response);
         if(!error && response.statusCode == 200) {
             res.send(body);
         }
-    })
+    })*/
 };
