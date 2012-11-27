@@ -34,16 +34,16 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/server/:server', server.server);
 
-/*var options = {router: 'table.json'};
-httpProxy.createServer(options).listen(9081);*/
+var options = {router: 'table.json'};
+httpProxy.createServer(options).listen(9081);
 
-/*httpProxy.createServer(function(req, res, proxy) {
+httpProxy.createServer(function(req, res, proxy) {
   //var target = req.params.server + ":9091";
   temp = req.url.split('/');
   console.log(temp);
   console.log('sendint tty.js request to: ', target);
   proxy.proxyRequest(req, res, target);
-}).listen(9081);*/
+}).listen(9081);
 
 //httpProxy.createServer(testOptions).listen(5000);
 
